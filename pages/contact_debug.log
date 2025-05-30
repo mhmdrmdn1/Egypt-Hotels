@@ -1,0 +1,31 @@
+2025-05-29 17:50:34 | --- New request ---
+2025-05-29 17:58:47 | --- New request ---
+2025-05-29 17:58:47 | Table checked/created
+2025-05-29 17:58:47 | Raw input: {"name":"mohamed ramdan","email":"01069787819m@gmail.com","message":"Hi Im Mohamed"}
+2025-05-29 17:58:47 | Parsed: name=[mohamed ramdan], email=[01069787819m@gmail.com], message=[Hi Im Mohamed]
+2025-05-29 17:58:47 | Message saved successfully
+2025-05-29 18:02:52 | --- New request ---
+2025-05-29 18:02:52 | Table checked/created
+2025-05-29 18:02:52 | Raw input: {"name":"mohamed ramdan","email":"01069787819m@gmail.com","message":"Hi Im Mohamed"}
+2025-05-29 18:02:52 | Parsed: name=[mohamed ramdan], email=[01069787819m@gmail.com], message=[Hi Im Mohamed]
+2025-05-29 18:02:52 | Message saved successfully
+2025-05-29 18:03:02 | --- New request ---
+2025-05-29 18:03:02 | Table checked/created
+2025-05-29 18:03:02 | Raw input: {"name":"mohamed ramdan","email":"01069787819m@gmail.com","message":"Hi Im Mohamed"}
+2025-05-29 18:03:02 | Parsed: name=[mohamed ramdan], email=[01069787819m@gmail.com], message=[Hi Im Mohamed]
+2025-05-29 18:03:02 | Message saved successfully
+2025-05-29 23:25:04 | --- New request ---
+2025-05-29 23:25:04 | Table checked/created
+2025-05-29 23:25:04 | Raw input: {"name":"mohamed ramdan","email":"01069787819m@gmail.com","message":"Hi Im Mohamed"}
+2025-05-29 23:25:04 | Parsed: name=[mohamed ramdan], email=[01069787819m@gmail.com], message=[Hi Im Mohamed]
+2025-05-29 23:25:04 | Message saved successfully
+2025-05-29 23:37:25 | --- New request ---
+2025-05-29 23:37:25 | Table checked/created
+2025-05-29 23:37:25 | Raw input: {"name":"mohamed ramdan","email":"01069787819m@gmail.com","message":"come down"}
+2025-05-29 23:37:25 | Parsed: name=[mohamed ramdan], email=[01069787819m@gmail.com], message=[come down]
+2025-05-29 23:37:25 | Message saved successfully
+2025-05-29 23:49:27 | --- New request ---
+2025-05-29 23:49:27 | Table checked/created
+2025-05-29 23:49:27 | Raw input: {"name":"mohamed ramdan","email":"01069787819m@gmail.com","message":"Hi Im Mohamed"}
+2025-05-29 23:49:27 | Parsed: name=[mohamed ramdan], email=[01069787819m@gmail.com], message=[Hi Im Mohamed]
+2025-05-29 23:49:27 | Message saved successfully

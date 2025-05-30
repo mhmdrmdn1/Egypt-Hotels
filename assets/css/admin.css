@@ -1,0 +1,923 @@
+/* Admin Dashboard Styles */
+:root {
+    --sidebar-width: 250px;
+    --header-height: 60px;
+    --primary-color: #4e73df;
+    --secondary-color: #858796;
+    --success-color: #1cc88a;
+    --info-color: #36b9cc;
+    --warning-color: #f6c23e;
+    --danger-color: #e74a3b;
+    --light-color: #f8f9fc;
+    --dark-color: #5a5c69;
+    --transition-speed: 0.3s;
+}
+
+/* General Layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* Layout */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--light-color);
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background: #2563eb;
+    color: #fff;
+    transition: all var(--transition-speed);
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: #2563eb;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.sidebar-profile {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-info .name {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.profile-info .role {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+.sidebar .components {
+    padding: 1rem 0;
+}
+
+.sidebar .components li a {
+    padding: 0.75rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+}
+
+.sidebar .components li a:hover,
+.sidebar .components li.active a {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .components li a i {
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-logout {
+    width: 100%;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: all var(--transition-speed);
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    min-width: 0;
+    background: var(--light-color);
+    transition: all var(--transition-speed);
+}
+
+/* Top Navigation */
+.navbar {
+    background: #fff !important;
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    min-height: 58px;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1020;
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: #23272b;
+    letter-spacing: 0.2px;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand .fa-hotel {
+    font-size: 1.35rem;
+    color: #2563eb;
+    vertical-align: middle;
+    margin-bottom: 1px;
+}
+
+.navbar .navbar-brand span {
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: #23272b;
+    margin-top: 1px;
+    letter-spacing: 0.2px;
+}
+
+.navbar .user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.navbar .user-info .dropdown-toggle {
+    font-weight: 500;
+    color: #23272b;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0.25rem 0.75rem 0.25rem 0.5rem;
+    border-radius: 20px;
+    transition: background 0.15s;
+}
+
+.navbar .user-info .dropdown-toggle:hover, .navbar .user-info .dropdown-toggle:focus {
+    background: #f4f6fa;
+    color: #2563eb;
+}
+
+.navbar .user-info .fa-user-circle {
+    font-size: 1.18rem;
+    color: #2563eb;
+    vertical-align: middle;
+}
+
+.navbar .user-info .dropdown-toggle .username {
+    font-size: 1.01rem;
+    font-weight: 500;
+    color: #23272b;
+    text-decoration: none !important;
+    margin-right: 0.1rem;
+}
+
+.navbar .user-info .dropdown-toggle .username:hover,
+.navbar .user-info .dropdown-toggle .username:focus {
+    text-decoration: none !important;
+}
+
+.navbar .dropdown-menu {
+    min-width: 180px;
+    font-size: 0.97rem;
+}
+
+.navbar .btn-link {
+    color: #23272b;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.navbar .btn-link:hover {
+    color: #2563eb;
+    background-color: #6799e660 !important;
+}
+
+/* Remove/override any old navbar padding or background */
+.navbar .container-fluid, .navbar .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background: none !important;
+}
+
+.navbar .btn {
+    padding: 0.375rem 0.75rem;
+    color: var(--secondary-color);
+}
+
+.dropdown-menu {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    border: none;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25%, -25%);
+}
+
+.profile img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Page Header */
+.page-header {
+    padding: 1.5rem 0;
+    background: white;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.page-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    transition: all var(--transition-speed);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.25rem;
+}
+
+.card-title {
+    margin-bottom: 0;
+    color: #2c3136;
+}
+
+/* Tables */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    background: var(--light-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Buttons */
+.btn {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all var(--transition-speed);
+}
+
+.btn i {
+    font-size: 0.875rem;
+}
+
+/* Forms */
+.form-control {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #d1d3e2;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+/* Alerts */
+.alert {
+    border: none;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: calc(-1 * var(--sidebar-width));
+    }
+
+    .sidebar.active {
+        margin-left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .content.active {
+        margin-left: var(--sidebar-width);
+    }
+}
+
+/* Utilities */
+.text-primary { color: var(--primary-color) !important; }
+.text-success { color: var(--success-color) !important; }
+.text-info { color: var(--info-color) !important; }
+.text-warning { color: var(--warning-color) !important; }
+.text-danger { color: var(--danger-color) !important; }
+
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-success { background-color: var(--success-color) !important; }
+.bg-info { background-color: var(--info-color) !important; }
+.bg-warning { background-color: var(--warning-color) !important; }
+.bg-danger { background-color: var(--danger-color) !important; }
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Styles */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+}
+
+/* Table Styles */
+.table thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
+}
+
+/* Button Styles */
+.btn-icon {
+    padding: 0.375rem;
+    line-height: 1;
+}
+
+/* Alert Styles */
+.alert-dismissible .btn-close {
+    padding: 1.125rem;
+}
+
+/* Image Preview */
+.image-preview {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.375rem;
+    border: 2px dashed #dee2e6;
+    transition: border-color 0.3s ease;
+}
+
+.image-preview:hover {
+    border-color: #6c757d;
+}
+
+/* Stats Cards */
+.stats-card {
+    border-left: 4px solid;
+    transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-3px);
+}
+
+.stats-card.primary {
+    border-left-color: #0d6efd;
+}
+
+.stats-card.success {
+    border-left-color: #198754;
+}
+
+.stats-card.warning {
+    border-left-color: #ffc107;
+}
+
+.stats-card.danger {
+    border-left-color: #dc3545;
+}
+
+/* Pagination */
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-link {
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.125rem;
+    border-radius: 0.25rem;
+}
+
+/* Search Form */
+.search-form {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .table-responsive {
+        margin: 0 -1rem;
+        width: calc(100% + 2rem);
+    }
+    
+    .btn-responsive {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Settings Page Styles */
+.settings-tab {
+    transition: all 0.3s ease;
+}
+
+.settings-tab:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+}
+
+.nav-tabs .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+}
+
+.nav-tabs .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bs-primary);
+    animation: tabActive 0.3s ease;
+}
+
+@keyframes tabActive {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+/* Form Controls */
+.form-control, .form-select {
+    transition: all 0.3s ease;
+}
+
+.form-control:hover:not(:focus) {
+    border-color: var(--bs-primary);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.15);
+}
+
+/* Table Styles */
+.table-hover tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+    transform: translateX(4px);
+}
+
+/* Action Buttons */
+.btn-outline-primary, .btn-outline-danger {
+    transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover, .btn-outline-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Animations */
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: scale(0.95);
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-header-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        white-space: nowrap;
+        margin-right: 0;
+        margin-left: 0;
+        padding-bottom: 4px;
+    }
+
+    .card-header-tabs::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .card-header-tabs::-webkit-scrollbar-thumb {
+        background-color: rgba(var(--bs-primary-rgb), 0.2);
+        border-radius: 4px;
+    }
+
+    .card-header-tabs .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .table-responsive {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+        width: calc(100% + 2rem);
+    }
+
+    .btn-sm {
+        padding: 0.4rem;
+    }
+
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+}
+
+/* Image Preview Styles */
+.img-thumbnail {
+    transition: all 0.3s ease;
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Switch Animation */
+.form-switch .form-check-input {
+    transition: background-position 0.2s ease-in-out,
+                background-color 0.2s ease-in-out,
+                border-color 0.2s ease-in-out,
+                box-shadow 0.2s ease-in-out,
+                transform 0.2s ease-in-out;
+}
+
+.form-switch .form-check-input:checked {
+    transform: scale(1.1);
+}
+
+/* Color Input Styles */
+.form-control-color {
+    min-width: 3rem;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+}
+
+.form-control-color::-webkit-color-swatch {
+    border-radius: 0.3rem;
+    border: none;
+}
+
+/* Alert Animations */
+.alert {
+    border-left: 4px solid transparent;
+}
+
+.alert-success {
+    border-left-color: var(--bs-success);
+}
+
+.alert-danger {
+    border-left-color: var(--bs-danger);
+}
+
+.alert.fade.show {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Loading States */
+.btn[disabled] {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn[disabled]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin: -0.5rem 0 0 -0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tooltip Animations */
+.tooltip {
+    transition: opacity 0.2s ease-in-out;
+}
+
+.tooltip.show {
+    opacity: 0.9;
+}
+
+/* Card Animations */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Animations */
+.fas {
+    transition: transform 0.2s ease;
+}
+
+tr:hover .fas,
+.btn:hover .fas {
+    transform: scale(1.2);
+}
+
+/* Notification Styles */
+.notification-time {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+/* Badge Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.badge-pulse {
+    animation: pulse 1s infinite;
+    display: inline-block;
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+    min-width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item.unread {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.notification-item .icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.notification-item .content {
+    flex: 1;
+}
+
+.notification-item .title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.notification-item .message {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.sidebar .nav-link.active, .sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,0.85);
+}
+
+/* --- FINAL NAVBAR USERNAME & CARET FIXES --- */
+.navbar .user-info .dropdown-toggle .username,
+.navbar .user-info .dropdown-toggle .username:focus,
+.navbar .user-info .dropdown-toggle .username:hover,
+.navbar .user-info .dropdown-toggle .username:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    color: #23272b !important;
+    background: none !important;
+    outline: none !important;
+}
+/* Only one caret: hide Bootstrap's default if using a custom caret, or keep default if not. */
+.navbar .user-info .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.35em;
+    vertical-align: middle;
+}
+/* If you ever add a custom caret icon, hide one or the other as needed. */
+.navbar .user-info .dropdown-toggle .fa-caret-down + .fa-caret-down,
+.navbar .user-info .dropdown-toggle .fa-caret-down {
+    display: none !important;
+}
+/* --- END FINAL FIXES --- */
+
+/* --- FINAL: Remove underline, border, and shadow from navbar user dropdown --- */
+.navbar .dropdown-toggle {
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: none !important;
+}
+
+/* --- FINAL: Remove underline, border, and shadow from navbar notification bell --- */
+.navbar .btn-link,
+.navbar .btn-link:focus,
+.navbar .btn-link:active,
+.navbar .btn-link:hover {
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.navbar .btn-link .fa-bell {
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: none !important;
+} 

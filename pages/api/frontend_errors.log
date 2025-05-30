@@ -1,0 +1,18 @@
+[2025-05-30 01:48:20] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
+[2025-05-30 01:48:23] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
+[2025-05-30 01:50:00] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
+[2025-05-30 01:50:04] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
+[2025-05-30 01:53:29] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
+[2025-05-30 01:53:57] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
+[2025-05-30 01:56:23] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
+[2025-05-30 01:56:25] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
+[2025-05-30 02:06:31] URL: http://localhost/Booking-Hotel-Project/pages/hotel-details.php?id=30 | Message: Uncaught ReferenceError: AOS is not defined | Source: http://localhost/Booking-Hotel-Project/assets/js/script.js | Line: 1 | Col: 1 | Stack: ReferenceError: AOS is not defined
+    at http://localhost/Booking-Hotel-Project/assets/js/script.js:1:1
