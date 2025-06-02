@@ -105,7 +105,6 @@ class HotelGallery {
             if (move_uploaded_file($img['tmp_name'], $target)) {
                 $uploaded[] = $image_path;
             } else {
-                error_log('Failed to upload: ' . $img['name'] . ' (tmp: ' . $img['tmp_name'] . ')');
                 $errors[] = $img['name'];
             }
         }

@@ -236,18 +236,6 @@ if (hotelSearchForm) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const chatbotScript = document.createElement('script');
-    chatbotScript.src = 'assets/js/chatbot.js';
-    chatbotScript.async = true;
-    document.body.appendChild(chatbotScript);
-
-    const chatbotStyles = document.createElement('link');
-    chatbotStyles.rel = 'stylesheet';
-    chatbotStyles.href = 'assets/css/chatbot.css';
-    document.head.appendChild(chatbotStyles);
-}); 
-
 const menuDropdownBtn = document.getElementById('menuDropdownBtn');
 const menuDropdownMenu = document.getElementById('menuDropdownMenu');
 if(menuDropdownBtn && menuDropdownMenu) {

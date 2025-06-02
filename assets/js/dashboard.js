@@ -100,7 +100,7 @@ function updateRevenueChart(data) {
                 y: {
                     beginAtZero: true,
                     ticks: {
-                        callback: value => '$' + value.toLocaleString()
+                        callback: value => 'EGP ' + value.toLocaleString()
                     }
                 }
             }

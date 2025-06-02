@@ -68,7 +68,6 @@ class ImageManager {
                 } else {
                     // Create an empty file as last resort
                     file_put_contents($defaultImagePath, '');
-                    error_log("Warning: Could not create default image. GD library not available and no static default image found.");
                 }
             }
         }
@@ -131,7 +130,6 @@ class ImageManager {
             
             return 'assets/images/hotels/' . $filename;
         } catch (Exception $e) {
-            error_log("Image upload error: " . $e->getMessage());
             throw new Exception("Failed to process the uploaded image.");
         }
     }

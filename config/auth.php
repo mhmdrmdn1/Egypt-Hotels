@@ -133,4 +133,9 @@ function userHasPermission($user_id, $permission_name, $pdo) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$user_id, $permission_name]);
     return $stmt->fetchColumn() > 0;
+}
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: /Booking-Hotel-Project/pages/login/login.php');
+    exit;
 } 

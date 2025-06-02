@@ -48,7 +48,8 @@ function handleSignIn($pdo) {
             $_SESSION['first_name'] = $user['first_name'] ?? null;
             $_SESSION['last_name'] = $user['last_name'] ?? null;
             $_SESSION['user_email'] = $user['email'];
-            $_SESSION['user_profile_image'] = $user['profile_image'] ?? null;
+            $_SESSION['profile_image'] = $user['profile_image'] ?? null;
+            $_SESSION['cover_image'] = $user['cover_image'] ?? null;
             $_SESSION['user_type'] = 'user';
             $_SESSION['phone'] = $user['phone'] ?? null;
             $_SESSION['date_of_birth'] = $user['date_of_birth'] ?? null;

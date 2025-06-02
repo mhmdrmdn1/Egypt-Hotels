@@ -45,7 +45,7 @@
 }
 
 .explore-hero-content p {
-    color: #3e6aac;
+    color: #2f415cb9;
     font-size: clamp(2rem, 2vw, 1.5rem);
     opacity: 0.95;
     margin-left: 1rem;
@@ -63,7 +63,7 @@
 /* Search Form */
 .search-container {
     width: 100%;
-    background: #3676c973;
+    background: #c6cdd673;
     backdrop-filter: blur(10px);
     border-radius: 1rem;
     padding: 1.5rem;

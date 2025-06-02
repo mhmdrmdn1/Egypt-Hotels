@@ -31,19 +31,6 @@ function getPDO() {
             // Test the connection
             $pdo->query('SELECT 1');
         } catch (PDOException $e) {
-            // Log the error with detailed information
-            $error_message = sprintf(
-                "[%s] Database connection error: %s\n",
-                date('Y-m-d H:i:s'),
-                $e->getMessage()
-            );
-            error_log($error_message, 3, __DIR__ . "/../logs/db_errors.log");
-            
-            // Ensure logs directory exists
-            if (!is_dir(__DIR__ . '/../logs')) {
-                mkdir(__DIR__ . '/../logs', 0755, true);
-            }
-            
             // Throw a generic error for production
             throw new Exception('Database connection failed. Please try again later.');
         }

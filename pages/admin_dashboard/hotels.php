@@ -206,6 +206,16 @@ try {
         exit;
     }
 
+    if (isset($_POST['bulk_delete'])) {
+        $hotel_ids = $_POST['hotel_ids'] ?? [];
+        if (!empty($hotel_ids)) {
+            $placeholders = str_repeat('?,', count($hotel_ids) - 1) . '?';
+            $stmt = $pdo->prepare("DELETE FROM hotels WHERE id IN ($placeholders)");
+            $stmt->execute($hotel_ids);
+            $_SESSION['success'] = 'Selected hotels deleted successfully';
+        }
+    }
+
 } catch (Exception $e) {
     error_log("[" . date('Y-m-d H:i:s') . "] Hotels list error: " . $e->getMessage() . "\n", 3, "../../logs/admin_errors.log");
     $_SESSION['error'] = "An error occurred while loading the hotels list.";

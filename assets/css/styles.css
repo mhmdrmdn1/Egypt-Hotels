@@ -1199,7 +1199,7 @@ img {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: #007bff;
+    background: #ebcb15;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -1280,6 +1280,21 @@ img {
 .hotel-price .per-night {
     color: #666;
     font-size: 0.9rem;
+}
+
+.button-primary {
+    background: #256ff7;
+    color: #fff;
+    width: 100%;
+}
+
+.button-primary:hover {
+    background: #0041b9;
+    color: #fff;
+}
+
+.button-outline {
+    width: 100%;
 }
 
 /* Responsive Adjustments */

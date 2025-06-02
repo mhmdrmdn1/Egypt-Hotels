@@ -119,24 +119,18 @@ try {
                 $pdo->commit();
                 $_SESSION['success'] = 'User deleted successfully.';
                 
-                // تسجيل العملية في ملف السجل
-                error_log("[" . date('Y-m-d H:i:s') . "] User deleted successfully. User ID: " . $user_id . "\n", 3, "../../logs/admin_actions.log");
-                
             } catch (Exception $e) {
                 $pdo->rollBack();
-                error_log("[" . date('Y-m-d H:i:s') . "] Error deleting user: " . $e->getMessage() . "\n", 3, "../../logs/admin_errors.log");
                 $_SESSION['error'] = 'Failed to delete user: ' . $e->getMessage();
             }
         } else {
             $_SESSION['error'] = 'You do not have permission to delete users.';
-            error_log("[" . date('Y-m-d H:i:s') . "] Unauthorized delete attempt. User ID: " . $_SESSION['admin_id'] . "\n", 3, "../../logs/admin_errors.log");
         }
         header('Location: users.php');
         exit;
     }
 
 } catch (Exception $e) {
-    error_log("[" . date('Y-m-d H:i:s') . "] Users list error: " . $e->getMessage() . "\n", 3, "../../logs/admin_errors.log");
     $_SESSION['error'] = "An error occurred while loading the users list.";
 }
 

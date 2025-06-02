@@ -9,6 +9,8 @@ if (!isset($_SESSION['admin_logged_in']) || !$_SESSION['admin_logged_in']) {
     exit;
 }
 
+header('Content-Type: application/json');
+
 try {
     $pdo = getPDO();
     $settings = Settings::getInstance($pdo);
@@ -42,9 +44,11 @@ try {
     
     $_SESSION['success'] = 'Settings updated successfully.';
     
+    echo json_encode(['success' => true, 'message' => 'Settings updated successfully']);
 } catch (Exception $e) {
-    error_log("[" . date('Y-m-d H:i:s') . "] Update settings error: " . $e->getMessage() . "\n", 3, "../../../logs/admin_errors.log");
     $_SESSION['error'] = $e->getMessage();
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'An error occurred']);
 }
 
 // Redirect back to settings page

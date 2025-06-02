@@ -45,15 +45,27 @@
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <div class="profile-image-container">
                         <?php
-                            $profile_image_path = isset($_SESSION['user_profile_image']) && !empty($_SESSION['user_profile_image']) 
-                                ? (strpos($_SESSION['user_profile_image'], '../') === 0 ? htmlspecialchars($_SESSION['user_profile_image']) : '../' . htmlspecialchars($_SESSION['user_profile_image'])) 
+                            $profile_image_path = isset($_SESSION['profile_image']) && !empty($_SESSION['profile_image']) 
+                                ? (strpos($_SESSION['profile_image'], '../') === 0 ? htmlspecialchars($_SESSION['profile_image']) : '../' . htmlspecialchars($_SESSION['profile_image'])) 
                                 : '../images/default-avatar.png';
                         ?>
                         <img src="<?php echo $profile_image_path; ?>" alt="Profile Image" class="profile-image">
                     </div>
-                    <span class="username">
-                        <h3><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'User'; ?></h3>
-                        <p class="user-email"><?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?></p>
+                    <span class="username" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
+                        <h3 style="margin-bottom: 0;">
+                            <?php
+                            if (isset($_SESSION['first_name']) && isset($_SESSION['last_name']) && $_SESSION['first_name'] && $_SESSION['last_name']) {
+                                echo htmlspecialchars($_SESSION['first_name'] . ' ' . $_SESSION['last_name']);
+                            } elseif (isset($_SESSION['username'])) {
+                                echo htmlspecialchars($_SESSION['username']);
+                            } else {
+                                echo 'User';
+                            }
+                            ?>
+                        </h3>
+                        <p class="user-email" style="margin-top: 0; font-size: 0.95em; color: #888;">
+                            <?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>
+                        </p>
                     </span>
                 <?php endif; ?>
             </div>
@@ -194,11 +206,11 @@
                     </div>
                 </div>
                 <div class="destination-card card" data-aos="fade-up" data-aos-delay="300" data-city="Sharm El-Sheikh">
-                    <img src="../assets/images/destinations/sharm.jpeg" alt="Sharm El Sheikh" class="card-img">
+                    <img src="../assets/images/destinations/sharm.jpeg" alt="Sharm El-Sheikh" class="card-img">
                     <div class="card-content">
                         <h3>Sharm El-Sheikh</h3>
                         <p>Red Sea paradise</p>
-                        <a href="explore.php?city=Sharm El-Sheikh" class="button button-outline">Explore</a>
+                        <a href="explore.php?city=Sharm El Sheikh" class="button button-outline">Explore</a>
                     </div>
                 </div>
                 <div class="destination-card card" data-aos="fade-up" data-aos-delay="400" data-city="Aswan">
@@ -318,7 +330,6 @@
         </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/your-code.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../assets/js/script.js"></script>
     <script>

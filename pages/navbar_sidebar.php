@@ -1,5 +1,5 @@
 <?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
-<!-- Header -->
+
 <header class="header" id="header">
         <nav class="navbar container">
             <a href="index.php" class="logo">
@@ -27,15 +27,27 @@
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <div class="profile-image-container">
                         <?php
-                            $profile_image_path = isset($_SESSION['user_profile_image']) && !empty($_SESSION['user_profile_image']) 
-                                ? (strpos($_SESSION['user_profile_image'], '../') === 0 ? htmlspecialchars($_SESSION['user_profile_image']) : '../' . htmlspecialchars($_SESSION['user_profile_image'])) 
+                            $profile_image_path = isset($_SESSION['profile_image']) && !empty($_SESSION['profile_image']) 
+                                ? (strpos($_SESSION['profile_image'], '../') === 0 ? htmlspecialchars($_SESSION['profile_image']) : '../' . htmlspecialchars($_SESSION['profile_image'])) 
                                 : '../images/default-avatar.png';
                         ?>
                         <img src="<?php echo $profile_image_path; ?>" alt="Profile Image" class="profile-image">
                     </div>
-                    <span class="username">
-                        <h3><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'User'; ?></h3>
-                        <p class="user-email"><?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?></p>
+                    <span class="username" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
+                        <h3 style="margin-bottom: 0;">
+                            <?php
+                            if (isset($_SESSION['first_name']) && isset($_SESSION['last_name']) && $_SESSION['first_name'] && $_SESSION['last_name']) {
+                                echo htmlspecialchars($_SESSION['first_name'] . ' ' . $_SESSION['last_name']);
+                            } elseif (isset($_SESSION['username'])) {
+                                echo htmlspecialchars($_SESSION['username']);
+                            } else {
+                                echo 'User';
+                            }
+                            ?>
+                        </h3>
+                        <p class="user-email" style="margin-top: 0; font-size: 0.95em; color: #888;">
+                            <?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>
+                        </p>
                     </span>
                 <?php endif; ?>
             </div>

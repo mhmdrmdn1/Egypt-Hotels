@@ -20,24 +20,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['user_image'])) {
         require_once __DIR__ . '/config/database.php';
         $stmt = $pdo->prepare("INSERT INTO user_gallery (user_id, image, caption, approved) VALUES (?, ?, ?, 0)");
         $stmt->execute([$userId, $fileName, $caption]);
-        header("Location: /Booking-Hotel-Project/pages/gallery.php?upload=success");
-        exit;
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+            header('Content-Type: application/json');
+            echo json_encode(['success' => true, 'message' => 'Photo uploaded successfully! It will appear after review.']);
+            exit;
+        } else {
+            header("Location: /Booking-Hotel-Project/pages/gallery.php?upload=success");
+            exit;
+        }
     } else {
-        echo "<h2>Upload failed!</h2>";
-        echo "<pre>";
-        print_r($_FILES['user_image']);
-        echo "<br>Target: $targetFile";
-        echo "<br>Is dir writable: ".(is_writable(dirname($targetFile)) ? 'yes' : 'no');
-        echo "<br>__DIR__: " . __DIR__;
-        echo "<br>Current user: " . get_current_user();
-        echo "<br>open_basedir: " . ini_get('open_basedir');
-        echo "<br>upload_max_filesize: " . ini_get('upload_max_filesize');
-        echo "<br>post_max_size: " . ini_get('post_max_size');
-        echo "<br>file_uploads: " . ini_get('file_uploads');
-        echo "<br>error code: " . $_FILES['user_image']['error'];
-        echo "<br>See https://www.php.net/manual/en/features.file-upload.errors.php for error code meaning.";
-        echo "</pre>";
-        exit;
+        if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
+            header('Content-Type: application/json');
+            echo json_encode(['success' => false, 'message' => 'Upload failed!']);
+            exit;
+        } else {
+            echo "<h2>Upload failed!</h2>";
+            echo "<pre>";
+            print_r($_FILES['user_image']);
+            echo "<br>Target: $targetFile";
+            echo "<br>Is dir writable: ".(is_writable(dirname($targetFile)) ? 'yes' : 'no');
+            echo "<br>__DIR__: " . __DIR__;
+            echo "<br>Current user: " . get_current_user();
+            echo "<br>open_basedir: " . ini_get('open_basedir');
+            echo "<br>upload_max_filesize: " . ini_get('upload_max_filesize');
+            echo "<br>post_max_size: " . ini_get('post_max_size');
+            echo "<br>file_uploads: " . ini_get('file_uploads');
+            echo "<br>error code: " . $_FILES['user_image']['error'];
+            echo "<br>See https://www.php.net/manual/en/features.file-upload.errors.php for error code meaning.";
+            echo "</pre>";
+            exit;
+        }
     }
 } else {
     header("Location: /Booking-Hotel-Project/pages/gallery.php?upload=error");

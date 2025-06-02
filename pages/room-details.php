@@ -11,7 +11,6 @@
     <link rel="shortcut icon" href="../assets/images/icons/web-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/notification.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
         .back-btn {
@@ -318,9 +317,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/script.js"></script>
-<script src="../assets/js/notification.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../assets/js/script.js"></script>
 <script>
     // Helper: get query param
 function getParam(name) {
@@ -435,9 +433,9 @@ function getParam(name) {
                         ${(data.reviews && data.reviews.length) ? data.reviews.map(r => `
                             <div class='review-card'>
                                 <div class='d-flex align-items-center mb-2'>
-                                    <img src='/Booking-Hotel-Project/${r.profile_image && r.profile_image !== "" 
+                                    <img src='${r.profile_image && r.profile_image !== "" 
                                         ? r.profile_image 
-                                        : "pages/images/default-avatar.png"}' 
+                                        : "/Booking-Hotel-Project/pages/images/default-avatar.png"}' 
                                         class='review-avatar' alt='User'>
                                     <div>
                                         <span class='review-user'>${r.user && r.user !== '' ? r.user : 'User'}</span>
@@ -598,9 +596,9 @@ function getParam(name) {
                         reviewsList.innerHTML = data.reviews.map(r => `
                             <div class='review-card'>
                                 <div class='d-flex align-items-center mb-2'>
-                                    <img src='/Booking-Hotel-Project/${r.profile_image && r.profile_image !== "" 
+                                    <img src='${r.profile_image && r.profile_image !== "" 
                                         ? r.profile_image 
-                                        : "pages/images/default-avatar.png"}' 
+                                        : "/Booking-Hotel-Project/pages/images/default-avatar.png"}' 
                                         class='review-avatar' alt='User'>
                                     <div>
                                         <span class='review-user'>${r.user && r.user !== '' ? r.user : 'User'}</span>

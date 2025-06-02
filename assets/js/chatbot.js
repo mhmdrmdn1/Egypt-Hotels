@@ -296,7 +296,7 @@
                 pets: "بعض الفنادق تسمح بالحيوانات الأليفة. تحقق من سياسة الفندق قبل الحجز.",
                 amenities: "نوفر مرافق متنوعة مثل: مسبح، جيم، مطعم، واي فاي، موقف سيارات، وغيرها حسب الفندق.",
                 location: "يمكنك معرفة موقع الفندق من صفحة تفاصيل الفندق أو عبر الخريطة في الموقع.",
-                contact: "للتواصل معنا: هاتف 0123456789 أو بريد info@hotel-booking.com أو عبر صفحة التواصل في الموقع.",
+                contact: "للتواصل معنا: هاتف 01069787819 أو بريد egypthotels25@gmail.com أو عبر صفحة التواصل في الموقع.",
                 security: "موقعنا آمن وبياناتك محمية. جميع عمليات الدفع مشفرة ونلتزم بسياسة الخصوصية.",
                 roomTypes: (msg) => {
                     const match = msg.match(/فندق (.+)/);
@@ -372,7 +372,7 @@
                 pets: "Some hotels allow pets. Please check the hotel's policy before booking.",
                 amenities: "We offer various amenities such as pool, gym, restaurant, WiFi, parking, and more depending on the hotel.",
                 location: "You can find the hotel's location on the hotel details page or via the map on the website.",
-                contact: "Contact us: Phone 0123456789, Email info@hotel-booking.com, or via the contact page on the website.",
+                contact: "Contact us: Phone 01069787819, Email info@hotel-booking.com, or via the contact page on the website.",
                 security: "Our site is secure and your data is protected. All payments are encrypted and we adhere to the privacy policy.",
                 roomTypes: (msg) => {
                     const match = msg.match(/at (.+)/);

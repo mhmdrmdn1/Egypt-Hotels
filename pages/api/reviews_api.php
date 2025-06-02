@@ -1,5 +1,6 @@
 <?php
 require_once '../../config/database.php';
+
 session_start();
 header('Content-Type: application/json');
 
@@ -37,16 +38,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $stmt->execute([$hotel_id, $room_name]);
         while ($row = $stmt->fetch()) {
             $user = 'Anonymous';
-            $profile_image = 'pages/images/default-avatar.png';
+            $profile_image = '/Booking-Hotel-Project/pages/images/default-avatar.png';
             if ($row['user_id']) {
                 // جلب اسم وصورة المستخدم من جدول users إذا كان متاحًا
-                $u = $pdo->prepare("SELECT username, user_profile_image FROM users WHERE id = ?");
+                $u = $pdo->prepare("SELECT username, profile_image FROM users WHERE id = ?");
                 $u->execute([$row['user_id']]);
                 $userRow = $u->fetch();
                 if ($userRow) {
                     $user = $userRow['username'];
-                    if (!empty($userRow['user_profile_image'])) {
-                        $profile_image = 'assets/images/profiles/' . $userRow['user_profile_image'];
+                    if (!empty($userRow['profile_image'])) {
+                        if (strpos($userRow['profile_image'], 'assets/') === 0) {
+                            $profile_image = '/Booking-Hotel-Project/' . htmlspecialchars($userRow['profile_image']);
+                        } else {
+                            $profile_image = '/Booking-Hotel-Project/assets/images/profiles/' . htmlspecialchars($userRow['profile_image']);
+                        }
                     }
                 }
             }
@@ -66,9 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 echo json_encode(['error' => 'Invalid request']);
 
 try {
-    // ... كودك ...
+    // API logic here
 } catch (Exception $e) {
-    log_error('Exception: ' . $e->getMessage());
-    echo json_encode(['error' => 'Internal server error']);
-    exit;
+    http_response_code(500);
+    echo json_encode(['error' => 'An error occurred']);
 } 
